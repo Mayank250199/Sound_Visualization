@@ -6,33 +6,7 @@
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/addons/p5.sound.min.js"></script>
 
-<script>
-var sound, amplitude, cnv;
-
-function preload(){
-  sound = loadSound('h.mp3');
-}
-function setup() {
-  cnv = createCanvas(500,500);
-  amplitude = new p5.Amplitude();
-
-  // start / stop the sound when canvas is clicked
-  cnv.mouseClicked(function() {
-    if (sound.isPlaying() ){
-      sound.stop();
-    } else {
-      sound.play();
-    }
-  });
-}
-function draw() {
-  background(0);
-  fill(255);
-  var level = amplitude.getLevel();
-  var size = map(level, 0, 1, 0, 200);
-  ellipse(width/2, height/2, size, size);
-}
-</script>
+  <script src="sound.js" type="text/javascript"></script>
 </head>
 <body>
 
